@@ -31,10 +31,16 @@
 </template>
 
 <script>
+import {shopType} from '../until/api'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  async mounted(){
+    const {data:res} = await shopType()
+      console.log(res)
+      
   }
 }
 </script>
